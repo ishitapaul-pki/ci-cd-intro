@@ -47,7 +47,7 @@ jobs:
       run: |
         python -m pip install --user pipx
         pip install --no-dependencies --upgrade pip
-        pip install --no-dependencies cement --verbose
+        pip install cement==2.8.2
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
