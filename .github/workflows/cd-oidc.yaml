@@ -54,6 +54,7 @@ jobs:
         pip install --no-dependencies --upgrade urllib3
         pip install --no-dependencies --upgrade pyyaml
         pip install --no-dependencies --upgrade pathspec
+        pip install --no-dependencies --upgrade jmespath
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
