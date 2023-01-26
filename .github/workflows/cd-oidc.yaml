@@ -4,7 +4,7 @@ name: OIDC Continuous Deployment
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
     paths:
       - 'web/**'
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
       name: 'Checkout repository'
 
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@67fbcbb121271f7775d2e7715933280b06314838
       with:
         role-to-assume: arn:aws:iam::322598643824:role/OIDC_EBDeployment
         role-session-name: ElasticBeanstalkDeployment
