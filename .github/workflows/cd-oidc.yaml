@@ -40,6 +40,6 @@ jobs:
 
     - name: Deploy changes
       run: |
+        python -m pip install --user pip 
         pip install awsebcli --upgrade --user
-        pip install colorama --upgrade
         eb deploy
