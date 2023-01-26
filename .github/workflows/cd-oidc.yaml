@@ -52,7 +52,7 @@ jobs:
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
         pip install --no-dependencies --upgrade urllib3
-        pip install --no-dependencies --upgrade yaml
+        pip install --no-dependencies --upgrade pyyaml
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
