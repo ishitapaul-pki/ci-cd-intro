@@ -47,7 +47,7 @@ jobs:
       run: |
         python -m pip install --user pipx
         pip install --no-dependencies --upgrade pip
-        pip install --no-dependencies --upgrade cement
+        pip install --no-dependencies cement --yes --verbose
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
