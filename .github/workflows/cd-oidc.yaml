@@ -37,6 +37,11 @@ jobs:
         role-to-assume: arn:aws:iam::322598643824:role/OIDC_EBDeployment
         role-session-name: ElasticBeanstalkDeployment
         aws-region: us-east-1
+        
+    - name: Set up Python
+      uses: actions/setup-python@v4.5.0
+      with:
+        python-version: 3.9
 
     - name: Deploy changes
       run: |
@@ -46,6 +51,7 @@ jobs:
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
+        pip install --no-dependencies --upgrade urllib3
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
