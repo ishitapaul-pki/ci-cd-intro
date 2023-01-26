@@ -47,11 +47,12 @@ jobs:
       run: |
         python -m pip install --user pipx
         pip install --no-dependencies --upgrade pip
-        pip install cement==2.8.2
+        pip install --no-dependencies --use-pep517 cement
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
         pip install --no-dependencies --upgrade urllib3
+        pip install --no-dependencies --use-pep517 yaml
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
