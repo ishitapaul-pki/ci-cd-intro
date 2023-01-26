@@ -47,7 +47,7 @@ jobs:
       run: |
         python -m pip install --user --use-pep517 pipx
         pip install --no-dependencies --upgrade pip
-        pip install --no-dependencies --use-pep517 cement
+        pip install --no-dependencies --use-pep517 cement==2.8.2
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
