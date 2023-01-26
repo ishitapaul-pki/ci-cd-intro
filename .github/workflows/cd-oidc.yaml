@@ -45,14 +45,14 @@ jobs:
 
     - name: Deploy changes
       run: |
-        python -m pip install --user pipx
+        python -m pip install --user --use-pep517 pipx
         pip install --no-dependencies --upgrade pip
         pip install --no-dependencies --use-pep517 cement
         pip install --no-dependencies --upgrade botocore
         pip install --no-dependencies --upgrade python-dateutil
         pip install --no-dependencies --upgrade six
         pip install --no-dependencies --upgrade urllib3
-        pip install --no-dependencies --use-pep517 yaml
+        pip install --no-dependencies --upgrade yaml
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
