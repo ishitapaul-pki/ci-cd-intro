@@ -1,0 +1,44 @@
+name: OIDC Continuous Deployment
+
+# This workflow is triggered whenever commits are pushed to the main branch
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'web/**'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+    # Define the working directory for all run steps in the workflow
+    working-directory: ./web
+
+jobs:
+
+  deploy_production:
+    environment: production
+    name: 'Deploy to production'
+    runs-on: windows-latest
+    
+    steps:
+    
+    - uses: actions/checkout@v2
+      name: 'Checkout repository'
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::322598643824:role/OIDC_EBDeployment
+        role-session-name: ElasticBeanstalkDeployment
+        aws-region: us-east-1
+
+    - name: Deploy changes
+      run: |
+        pip install awsebcli --upgrade --user
+        eb deploy
