@@ -44,7 +44,7 @@ jobs:
         pip install --no-dependencies --upgrade pip
         pip install --no-dependencies --upgrade cement
         pip install --no-dependencies --upgrade botocore
-        pip install --no-dependencies --upgrade dateutil
+        pip install --no-dependencies --upgrade python-dateutil
         # pip install --no-dependencies awsebcli --upgrade --user
         pip install --no-dependencies --use-pep517 awsebcli
         eb deploy
