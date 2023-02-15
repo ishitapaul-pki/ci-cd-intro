@@ -11,7 +11,7 @@ jobs:
     name: 'Wiz-cli Image Scan'
     runs-on: ubuntu-latest
     env:
-      SCAN_PATH: "Dockerfile" # Set the relative path in the repo to build the image from
+      SCAN_PATH: "ci-cd-intro/Dockerfile" # Set the relative path in the repo to build the image from
       TAG: "hello-world" # Set the tag to use for the image
       POLICY: "Perkinelmer vulnerabilities policy" # Set the desired Wiz-cli policy to use
 
