@@ -1,8 +1,10 @@
 name: 'wiz-cli'
 on: 
-  pull_request:
+  push:
     branches:
       - 'master'
+  workflow_dispatch:
+  
 
 jobs:
   wiz-cli-image-scan:
